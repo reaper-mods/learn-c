@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brototype C Retest Practice</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Brototype C Retest Practice home">
+        <span class="brand-mark">C</span>
+        <span>
+          <strong>Retest Sprint</strong>
+          <small>Brototype fumigation practice</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main sections">
+        <a href="#learn">Learn</a>
+        <a href="#visuals">Visuals</a>
+        <a href="#practice">Practice</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#plan">Plan</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Last chance prep for Monday</p>
+          <h1>C fundamentals, arrays, loops, theory, and practical exam drills.</h1>
+          <p>
+            Study the exact topics from your fumigation test: main function, stdio.h, if-else,
+            switch, loops, arrays, reverse print, duplicates, largest element, prime numbers,
+            and communication practice.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#practice">Start practice</a>
+            <a class="button ghost" href="#visuals">Understand arrays</a>
+          </div>
+        </div>
+        <div class="terminal-panel" aria-label="C code preview">
+          <div class="terminal-header">
+            <span></span><span></span><span></span>
+          </div>
+          <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+  int a[5] = {4, 8, 2, 8, 5};
+
+  for (int i = 4; i &gt;= 0; i--) {
+    printf("%d ", a[i]);
+  }
+
+  return 0;
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="stats-band" aria-label="Progress summary">
+        <div>
+          <strong id="solvedCount">0</strong>
+          <span>questions solved</span>
+        </div>
+        <div>
+          <strong id="quizBest">0%</strong>
+          <span>best quiz score</span>
+        </div>
+        <div>
+          <strong id="streakCount">0</strong>
+          <span>study checks</span>
+        </div>
+        <button class="mini-button danger" id="resetProgress">Reset</button>
+      </section>
+
+      <section class="section" id="learn">
+        <div class="section-heading">
+          <p class="eyebrow">Theory essentials</p>
+          <h2>Answer viva questions with confidence</h2>
+        </div>
+        <div class="concept-grid" id="conceptGrid"></div>
+      </section>
+
+      <section class="section split" id="visuals">
+        <div>
+          <p class="eyebrow">Visual understanding</p>
+          <h2>How arrays and loops actually move</h2>
+          <p class="section-text">
+            An array is a row of boxes. Each box has an index. A loop is a repeat machine that
+            visits those boxes one by one. Change the loop mode and step through the movement.
+          </p>
+          <div class="control-row">
+            <label>
+              Array values
+              <input id="arrayInput" value="4, 8, 2, 8, 5" />
+            </label>
+            <label>
+              Loop mode
+              <select id="loopMode">
+                <option value="forward">Forward print</option>
+                <option value="reverse">Reverse print</option>
+                <option value="largest">Find largest</option>
+                <option value="duplicate">Find duplicates</option>
+              </select>
+            </label>
+          </div>
+          <div class="control-row buttons">
+            <button class="button primary" id="stepLoop">Step</button>
+            <button class="button ghost" id="playLoop">Auto run</button>
+            <button class="button ghost" id="resetLoop">Reset</button>
+          </div>
+        </div>
+        <div class="visual-workbench">
+          <div class="array-row" id="arrayRow"></div>
+          <div class="loop-status" id="loopStatus"></div>
+          <pre class="code-box" id="loopCode"></pre>
+        </div>
+      </section>
+
+      <section class="section muted" id="practice">
+        <div class="section-heading">
+          <p class="eyebrow">Practical exam drills</p>
+          <h2>Array-based C questions</h2>
+        </div>
+        <div class="toolbar">
+          <input id="searchBox" placeholder="Search reverse, duplicate, prime, switch..." />
+          <select id="difficultyFilter" aria-label="Filter by difficulty">
+            <option value="all">All levels</option>
+            <option value="basic">Basic</option>
+            <option value="exam">Exam</option>
+            <option value="pap">PAP level</option>
+          </select>
+        </div>
+        <div class="question-grid" id="questionGrid"></div>
+      </section>
+
+      <section class="section split" id="quiz">
+        <div>
+          <p class="eyebrow">Theory quiz</p>
+          <h2>Practice the questions they ask orally</h2>
+          <p class="section-text">
+            Choose answers, check instantly, and repeat until the words become natural.
+          </p>
+          <button class="button primary" id="newQuiz">New quiz</button>
+        </div>
+        <div class="quiz-panel">
+          <div id="quizQuestions"></div>
+          <button class="button primary full" id="submitQuiz">Check quiz</button>
+          <p class="quiz-result" id="quizResult"></p>
+        </div>
+      </section>
+
+      <section class="section" id="plan">
+        <div class="section-heading">
+          <p class="eyebrow">Monday strategy</p>
+          <h2>Simple study path for the retest</h2>
+        </div>
+        <div class="plan-grid" id="planGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Practice slowly first. In the exam, write the loop structure before thinking about the full solution.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
